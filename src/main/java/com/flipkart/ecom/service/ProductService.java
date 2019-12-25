@@ -1,7 +1,7 @@
 package com.flipkart.ecom.service;
 
-import com.flipkart.ecom.entity.Category;
 import com.flipkart.ecom.entity.Product;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -10,6 +10,8 @@ import java.util.List;
 public interface ProductService {
 
     List<Product> getAllProducts();
-    List<Category> getAllCategories();
 
+    ResponseEntity addProduct(Product product);
+
+    ResponseEntity deleteProduct(Integer productId);
 }

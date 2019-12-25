@@ -1,9 +1,9 @@
 package com.flipkart.ecom.repository;
 
-import com.flipkart.ecom.entity.Category;
+import com.flipkart.ecom.entity.Supplier;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface CategoryRepository extends JpaRepository<Category, Integer> {
+public interface SupplierRepository extends JpaRepository<Supplier, Integer> {
 }

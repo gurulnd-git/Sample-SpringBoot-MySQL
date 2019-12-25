@@ -2,27 +2,33 @@ package com.flipkart.ecom.entity;
 
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
+import java.io.Serializable;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 
 @Entity
-public class Category {
+public class Category implements Serializable {
+
 
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
     private String name;
 
     @OneToMany(mappedBy = "category", cascade = CascadeType.ALL)
-    private List<Product> product;
+    private Set<Product> product = new HashSet<>();
 
-    public List<Product> getProduct() {
+    public Set<Product> getProduct() {
         return product;
     }
 
-    public void setProduct(List<Product> product) {
+    public void setProduct(Set<Product> product) {
         this.product = product;
     }
 
